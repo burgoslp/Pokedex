@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('habilidad_pokemon', function (Blueprint $table) {
+        Schema::create('debilidad_pokemon', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('habilidad_id')->constrained('habilidades','id')->onDelete('CASCADE');
+            $table->foreignId('tipo_id')->constrained('tipos','id')->onDelete('CASCADE');
             $table->foreignId('pokemon_id')->nullable()->constrained('pokemons','id')->onDelete('CASCADE');
             $table->foreignId('evolucion_id')->nullable()->constrained('evoluciones','id')->onDelete('CASCADE');
             $table->timestamps();
@@ -25,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('habilidad_pokemon');
+        Schema::dropIfExists('debilidad_pokemon');
     }
 };

@@ -2,6 +2,7 @@
 
 use App\Models\Evolucion;
 use App\Models\Pokemon;
+use App\Models\Habilidad;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    /*$pokemons= Pokemon::find(1);
+   
 
-    foreach ($pokemons->habilidades as $habilidad) {
-        print($habilidad);
-    }*/
+    dd("aaa");
 });

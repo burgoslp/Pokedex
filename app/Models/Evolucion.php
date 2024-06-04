@@ -24,7 +24,7 @@ class Evolucion extends Model
 
 
     public function habilidades(){
-        return $this->belongsToMany(Habilidad::class, 'habilidad_pokemon','evolucion_id');
+        return $this->belongsToMany(Habilidad::class, 'habilidad_pokemon','evolucion_id','habilidad_id');
 
     }
 

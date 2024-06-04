@@ -30,7 +30,7 @@ class Pokemon extends Model
 
     public function habilidades(){
 
-        return $this->belongsToMany(Habilidad::class, 'habilidad_pokemon','pokemon_id');
+        return $this->belongsToMany(Habilidad::class, 'habilidad_pokemon','pokemon_id','habilidad_id');
 
     }
 
