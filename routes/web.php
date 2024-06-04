@@ -1,9 +1,10 @@
 <?php
 
-use App\Models\Evolucion;
 use App\Models\Pokemon;
+use App\Models\Evolucion;
 use App\Models\Habilidad;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-
-   
-
-    dd("aaa");
-});
+Route::get('/', [HomeController::class,'index']);

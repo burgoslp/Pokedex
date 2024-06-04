@@ -28,4 +28,16 @@ class Evolucion extends Model
 
     }
 
+    public function tipos(){
+
+        return $this->belongsToMany(Tipo::class, 'tipo_pokemon','evolucion_id','tipo_id');
+    }
+
+
+    public function debilidades(){
+
+        return $this->belongsToMany(Tipo::class, 'debilidad_pokemon','evolucion_id','tipo_id');
+
+    }
+
 }

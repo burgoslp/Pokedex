@@ -34,4 +34,18 @@ class Pokemon extends Model
 
     }
 
+    public function tipos(){
+
+        return $this->belongsToMany(Tipo::class, 'tipo_pokemon','pokemon_id','tipo_id');
+
+    }
+
+    public function debilidades(){
+
+        return $this->belongsToMany(Tipo::class, 'debilidad_pokemon','pokemon_id','tipo_id');
+
+    }
+
+
+
 }
