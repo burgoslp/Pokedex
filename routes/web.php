@@ -1,8 +1,5 @@
 <?php
 
-use App\Models\Pokemon;
-use App\Models\Evolucion;
-use App\Models\Habilidad;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 

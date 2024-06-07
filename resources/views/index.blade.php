@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Buscador web de pokemons</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
+    @livewireStyles
 </head>
 <body class="bg-gray-200 ">
     <nav class="p-3 bg-red-600 grid grid-cols-2">
@@ -18,7 +18,7 @@
         </div>
     </nav>
 
-    <main class="grid grid-cols-3">
+    <main class="grid grid-cols-3 mb-8">
         <section class="p-3 col-span-2">
             <div class="grid grid-cols-1 ">
                 <div class="mb-3">
@@ -59,24 +59,28 @@
                                 <span class="bg-gray-400 text-white text-center rounded p-2">{{$pokemon->codigo}}</span>
                             </div>
                             <div class="p-3 text-center">
-                                <img src="{{asset('imagenes/carterpie.png')}}" alt="" class="w-4/5">
+                                <img src="{{asset('imagenes/'.$pokemon->imagen.'.png')}}" alt="" class="w-4/5">
                                 <h1 class="mb-2">{{$pokemon->nombre}}</h1>
                                 @foreach ($pokemon->tipos as $habilidad)
                                     <span class="bg-red-700 rounded mr-2 p-1 text-white">{{$habilidad->nombre}}</span   >
                                 @endforeach                               
-                                <span class="bg-gray-700 rounded p-1 text-white">...</span>
+                                <span class="bg-gray-700 rounded p-1 text-white" wire:click="mostrarPokemon({{ $pokemon->id }})">...</span>
                             </div>
                         </div>
                     @endforeach  
                 </div>
             </div>
         </section>
-        <section class="">
-    
+        <section class="p-3">
+            @livewire('show-pokemon')            
         </section>
     </main>
-
+    <footer class="p-8 text-center bg-red-600 text-white">
+        <p class="uppercase">
+            Desarrollado por leopoldo pinedo programador full stack 2024
+        </p>
+    </footer>
     
-    
+    @livewireScripts
 </body>
 </html>

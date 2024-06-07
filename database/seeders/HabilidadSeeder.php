@@ -114,7 +114,70 @@ class HabilidadSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
+
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Espesura',
+            'descripcion' => 'Potencia sus movimientos de tipo planta cuando le quedan pocos PS.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Mar llamas',
+            'descripcion' => 'Potencia sus movimientos de tipo fuego cuando le quedan pocos PS.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Torrente',
+            'descripcion' => 'Potencia sus movimientos de tipo agua cuando le quedan pocos PS.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Polvo escudo',
+            'descripcion' => 'El polvo de escamas que lo envuelve lo protege de los efectos secundarios de los ataques recibidos.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Mudar',
+            'descripcion' => 'Puede curar sus problemas de estado al mudar la piel.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Ejambre',
+            'descripcion' => 'Potencia sus movimientos de tipo bicho cuando le quedan pocos PS.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Vista lince',
+            'descripcion' => 'Su aguda vista evita que su precisión se reduzca.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
+
+        DB::table('habilidades')->insert([
+            'nombre' => 'Vista lince',
+            'descripcion' => 'Su aguda vista evita que su precisión se reduzca.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
         
-        
+        DB::table('habilidades')->insert([
+            'nombre' => 'Tumbos',
+            'descripcion' => 'Aumenta su evasión si está confuso.',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now()
+        ]);
     }
 }

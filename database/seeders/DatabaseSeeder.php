@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            //GeneroSeeder::class,       
-            //HabilidadSeeder::class,    
-            //TipoSeeder::class,
+            GeneroSeeder::class,       
+            HabilidadSeeder::class,    
+            TipoSeeder::class,
             PokemonSeeder::class         
         ]);
     }
