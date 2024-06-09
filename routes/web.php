@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Models\Evolucion;
+use App\Models\Pokemon;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +18,4 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class,'index']);
+

@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     @livewireStyles
 </head>
-<body class="bg-gray-200 ">
+<body class="bg-gray-200 content">
     <nav class="p-3 bg-red-600 grid grid-cols-2">
         <div class=" text-white text-6xl ">
             Pokedex
@@ -18,62 +18,10 @@
         </div>
     </nav>
 
-    <main class="grid grid-cols-3 mb-8">
+    <main class="grid grid-cols-1 mb-8">
         <section class="p-3 col-span-2">
-            <div class="grid grid-cols-1 ">
-                <div class="mb-3">
-                    <form action="" method="GET">
-                        <div class="relative mb-2">
-                            <input type="text" placeholder="Ingresa un pokemon" class="p-3 w-full rounded border border-slate-700">
-                            <button type="submit" class="bg-gray-200 p-2 rounded-lg absolute end-2 top-2">
-                                <img src="{{asset('imagenes/pokeball.png')}}" alt="" class="w-4">
-                            </button>
-                        </div>
-                        <div>
-                            <select name="" id="" class="p-2 rounded mr-3">
-                                <option value="">Tipo</option>
-                                <option value="">lucha</option>
-                                <option value="">vuelo</option>
-                                <option value="">fuego</option>
-                            </select>
-                            <select name="" id="" class="p-2 rounded  mr-3">
-                                <option value="">Habilidad</option>
-                                <option value="">lucha</option>
-                                <option value="">vuelo</option>
-                                <option value="">fuego</option>
-                            </select>
-                            <select name="" id="" class="p-2 rounded  mr-3">
-                                <option value="">Debilidad</option>
-                                <option value="">lucha</option>
-                                <option value="">vuelo</option>
-                                <option value="">fuego</option>
-                            </select>
-                        </div>
-                    </form>
-                </div>
-                
-                <div class="grid grid-cols-3 gap-4 ">
-                    @foreach ($pokemons as $pokemon)
-                        <div class="shadow-xl rounded-lg bg-white flex flex-col">
-                            <div class="text-center p-2">
-                                <span class="bg-gray-400 text-white text-center rounded p-2">{{$pokemon->codigo}}</span>
-                            </div>
-                            <div class="p-3 text-center">
-                                <img src="{{asset('imagenes/'.$pokemon->imagen.'.png')}}" alt="" class="w-4/5">
-                                <h1 class="mb-2">{{$pokemon->nombre}}</h1>
-                                @foreach ($pokemon->tipos as $habilidad)
-                                    <span class="bg-red-700 rounded mr-2 p-1 text-white">{{$habilidad->nombre}}</span   >
-                                @endforeach                               
-                                <span class="bg-gray-700 rounded p-1 text-white" wire:click="mostrarPokemon({{ $pokemon->id }})">...</span>
-                            </div>
-                        </div>
-                    @endforeach  
-                </div>
-            </div>
-        </section>
-        <section class="p-3">
-            @livewire('show-pokemon')            
-        </section>
+            @livewire('buscador-pokemon', ['pokemons'=>$pokemons,'tipos'=>$tipos])
+        </section>       
     </main>
     <footer class="p-8 text-center bg-red-600 text-white">
         <p class="uppercase">
