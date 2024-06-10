@@ -43,14 +43,15 @@ class BuscadorPokemon extends Component
                 $query->where('tipos.id', $tipo_id);
             });
 
-        }     
-        
-        //return $evoluciones->union($pokemon)->orderBy('codigo', 'asc')->paginate(6);
-
-        dd($evoluciones->union($pokemon)->orderBy('codigo', 'asc')->paginate(6));
+        }       
+        //dd($evoluciones->union($pokemon)->orderBy('codigo', 'asc')->toSql());        
+        return $evoluciones->union($pokemon)->orderBy('codigo', 'asc')->paginate(6);
     }
 
-    
+    public function mostrarDetalles($id){
+
+        dd($id);
+    }
 
     public function render()
     {

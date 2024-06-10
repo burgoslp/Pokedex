@@ -20,8 +20,7 @@
     </div>
 
     <div class="grid grid-cols-3 gap-4  mb-4">
-            @foreach ($pokemons as $pokemon)
-           
+            @foreach ($pokemons as $pokemon)          
 
             <div class="shadow-xl rounded-lg bg-white flex flex-col">
                 <div class="text-center p-2">
@@ -29,14 +28,7 @@
                 </div>
                 <div class="p-3 text-center">
                     <img src="{{asset('imagenes/'.$pokemon->imagen.'.png')}}" alt="" class="w-4/5">
-                    <h1 class="mb-2">{{$pokemon->nombre}}</h1>
-                    {{$pokemon->verificaEspecie($pokemon->codigo)}}
-                    @foreach ($pokemon->tipos as $tipoPokemon)
-                    <span class="bg-red-700 rounded mr-2 p-1 text-white">{{$tipoPokemon->nombre}}</span>
-
-                    @endforeach
-                    <span class="bg-gray-700 rounded p-1 text-white"
-                        wire:click="mostrarPokemon({{ $pokemon->id }})">...</span>
+                    <button class="bg-blue-600 rounded p-2 text-white uppercase shadow-xl" wire:click="mostrarDetalles({{$pokemon->id}})">{{$pokemon->nombre}}</button>
                 </div>
             </div>
             @endforeach       

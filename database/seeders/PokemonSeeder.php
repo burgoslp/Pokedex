@@ -328,12 +328,12 @@ class PokemonSeeder extends Seeder
              $evolucion = new Evolucion();
              $evolucion->pokemon_id=$pokemon->id;
              $evolucion->codigo = '0009';
-             $evolucion->nombre = 'Wartortle';
+             $evolucion->nombre = 'blastoise';
              $evolucion->genero_id = 1;//macho
              $evolucion->altura =5.03;
              $evolucion->peso = 188.5;
              $evolucion->orden= 2;
-             $evolucion->imagen = 'wartortle';
+             $evolucion->imagen = 'blastoise';
              $evolucion->save();
  
              // Asociar habilidades al Pokémon
@@ -557,7 +557,7 @@ class PokemonSeeder extends Seeder
              //Evolucion 2
              $evolucion = new Evolucion();
              $evolucion->pokemon_id=$pokemon->id;
-             $evolucion->codigo = '00015';
+             $evolucion->codigo = '0015';
              $evolucion->nombre = 'Beedrill';
              $evolucion->genero_id = 1;//macho
              $evolucion->altura =3.03;
@@ -677,7 +677,7 @@ class PokemonSeeder extends Seeder
              //Evolucion 2
              $evolucion = new Evolucion();
              $evolucion->pokemon_id=$pokemon->id;
-             $evolucion->codigo = '00018';
+             $evolucion->codigo = '0018';
              $evolucion->nombre = 'Pidgeot';
              $evolucion->genero_id = 1;//macho
              $evolucion->altura =4.11;
