@@ -46,6 +46,15 @@ class Pokemon extends Model
 
     }
 
-
+    public function verificaEspecie($codigo){
+        $verificaCodigo=$this->where('codigo',$codigo)->get();
+        
+        foreach($verificaCodigo as $codigo){
+            if(isset($codigo->codigo )){
+                return 'Pokemon';
+            }            
+        }
+       
+    }
 
 }

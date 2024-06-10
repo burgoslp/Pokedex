@@ -2,19 +2,22 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Evolucion;
-use Livewire\Component;
 use App\Models\Pokemon;
+use App\Models\Evolucion;
+use App\Models\Tipo;
+use Livewire\WithPagination;
+use Livewire\Component;
+
 class BuscadorPokemon extends Component
 {
-    public $pokemons;
-    public $tipos;
-    public $tipo_id;
-    public $nombre;
+    use WithPagination;
 
-    public function mount($pokemons,$tipos){
-        $this->pokemons=$pokemons;
-        $this->tipos=$tipos;
+    public $tipo_id;
+    public $nombre;  
+
+    public function tiposAll(){
+        $tipos=Tipo::all();
+        return $tipos;
     }
 
     public function buscar(){
@@ -40,16 +43,17 @@ class BuscadorPokemon extends Component
                 $query->where('tipos.id', $tipo_id);
             });
 
-        }        
+        }     
         
-        
-        
-      
-        $this->pokemons=$evoluciones->union($pokemon)->orderBy('codigo','asc')->limit(6)->get();
+        //return $evoluciones->union($pokemon)->orderBy('codigo', 'asc')->paginate(6);
+
+        dd($evoluciones->union($pokemon)->orderBy('codigo', 'asc')->paginate(6));
     }
+
+    
 
     public function render()
     {
-        return view('livewire.buscador-pokemon');
+        return view('livewire.buscador-pokemon',['pokemons'=>$this->buscar(),'tipos'=>$this->tiposAll()]);
     }
 }

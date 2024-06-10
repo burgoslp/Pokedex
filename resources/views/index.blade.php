@@ -20,7 +20,7 @@
 
     <main class="grid grid-cols-1 mb-8">
         <section class="p-3 col-span-2">
-            @livewire('buscador-pokemon', ['pokemons'=>$pokemons,'tipos'=>$tipos])
+            @livewire('buscador-pokemon')
         </section>       
     </main>
     <footer class="p-8 text-center bg-red-600 text-white">
