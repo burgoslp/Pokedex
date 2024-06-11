@@ -6,6 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Buscador web de pokemons</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+
+        .carta-box {
+            height: 430px;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .carta-box:hover .carta {
+            transform: rotateY(180deg);
+        }
+
+        .carta {
+            transform-style: preserve-3d;
+            transition: all 0.5s linear;
+        }
+
+        .cara {
+            backface-visibility: hidden;
+            position: absolute;
+        }
+
+        .cara.detras {
+         transform: rotateY(180deg);
+        }
+    </style>
     @livewireStyles
 </head>
 <body class="bg-gray-200 content">

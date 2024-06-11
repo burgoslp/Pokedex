@@ -14,6 +14,8 @@ class BuscadorPokemon extends Component
 
     public $tipo_id;
     public $nombre;  
+    public $estadoCarta = false;
+
 
     public function tiposAll(){
         $tipos=Tipo::all();
@@ -48,9 +50,14 @@ class BuscadorPokemon extends Component
         return $evoluciones->union($pokemon)->orderBy('codigo', 'asc')->paginate(6);
     }
 
-    public function mostrarDetalles($id){
+  
+    
+    public function activaCarta($codigo){
+        $this->estadoCarta =  !$this->estadoCarta;
+        $this->mostrarDetalles($codigo);
+    }
 
-        dd($id);
+    public function mostrarDetalles(){
     }
 
     public function render()
