@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('pokemons', function (Blueprint $table) {
             $table->id();
             $table->foreignId('genero_id')->constrained("generos","id");
-            $table->string('codigo');
+            $table->string('codigo')->unique();
             $table->string('nombre');
             $table->double('altura');
             $table->double('peso');
             $table->string('imagen');
+            $table->string('descripcion');
             $table->timestamps();            
         });
     }

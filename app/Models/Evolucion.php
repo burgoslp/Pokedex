@@ -14,7 +14,8 @@ class Evolucion extends Model
         'altura',
         'peso',
         'orden',
-        'imagen'
+        'imagen',
+        'descripcion',
     ];
     protected $table="evoluciones";
 
@@ -40,6 +41,15 @@ class Evolucion extends Model
 
     }
 
-    
+    public function validaEspecie($codigo){
+        $especimen=$this->where('codigo',$codigo)->get();
+
+        foreach( $especimen as $especie){
+            if($especie->codigo){
+                return 1;//evolucion
+            }           
+        }
+        return 0;//pokemon base
+    }
 
 }

@@ -14,7 +14,8 @@ class Pokemon extends Model
         'nombre',
         'altura',
         'peso',
-        'imagen'
+        'imagen',
+        'descripcion',
     ];
     protected $table="pokemons";
 
@@ -46,15 +47,15 @@ class Pokemon extends Model
 
     }
 
-    public function verificaEspecie($codigo){
-        $verificaCodigo=$this->where('codigo',$codigo)->get();
-        
-        foreach($verificaCodigo as $codigo){
-            if(isset($codigo->codigo )){
-                return 'Pokemon';
-            }            
+    public function validaEspecie($codigo){
+        $especimen=$this->where('codigo',$codigo)->get();
+
+        foreach( $especimen as $especie){
+            if($especie->codigo){
+                return 0;//pokemon base
+            }           
         }
-       
+        return 1;//evolución
     }
 
 }

@@ -14,7 +14,6 @@ class BuscadorPokemon extends Component
 
     public $tipo_id;
     public $nombre;  
-    public $estadoCarta = false;
 
 
     public function tiposAll(){
@@ -51,10 +50,9 @@ class BuscadorPokemon extends Component
     }
 
   
-    public function mostrarDetalles($codigo){
-        $this->estadoCarta =  !$this->estadoCarta;
-
+    public function mostrarDetalles($id,$tipoCriatura){
         
+        $this->emit('abrirModal',['id'=>$id,'tipo'=>$tipoCriatura]);
     }
 
     public function render()
