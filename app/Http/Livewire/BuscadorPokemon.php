@@ -51,13 +51,10 @@ class BuscadorPokemon extends Component
     }
 
   
-    
-    public function activaCarta($codigo){
+    public function mostrarDetalles($codigo){
         $this->estadoCarta =  !$this->estadoCarta;
-        $this->mostrarDetalles($codigo);
-    }
 
-    public function mostrarDetalles(){
+        
     }
 
     public function render()
