@@ -21,7 +21,7 @@
 
     <div class="grid sm:grid-cols-1  md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:grid-cols-2   lg:gap-8 mb-4">
         @foreach ($pokemons as $pokemon)
-        
+
         <div class="mb-4 md:mb-8  lg:mb-16">
             <div class=" shadow-xl rounded-lg bg-white  flex flex-col ">
                 <div class="text-center p-2">
