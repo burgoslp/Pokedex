@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'asset_url' => 'http://localhost/Pokedex/public',
+    'asset_url' => "http://localhost/Pokedex/public",
 
     /*
     |--------------------------------------------------------------------------

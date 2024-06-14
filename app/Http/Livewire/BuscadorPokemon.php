@@ -57,6 +57,6 @@ class BuscadorPokemon extends Component
 
     public function render()
     {
-        return view('livewire.buscador-pokemon',['pokemons'=>$this->buscar(),'tipos'=>$this->tiposAll()])->extends('layouts.app')->section('scripts');
+        return view('livewire.buscador-pokemon',['pokemons'=>$this->buscar(),'tipos'=>$this->tiposAll()]);
     }
 }

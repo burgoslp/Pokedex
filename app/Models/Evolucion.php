@@ -20,7 +20,7 @@ class Evolucion extends Model
     protected $table="evoluciones";
 
     public function estadisticas(){
-        return $this->hasOne(Estadistica::class);
+        return $this->hasOne(Estadistica::class,'evolucion_id');
     }
 
 

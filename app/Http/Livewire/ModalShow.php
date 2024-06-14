@@ -39,16 +39,19 @@ class ModalShow extends Component
         }
 
         $this->especie = $especie;
-        $this->initializeChart();
+
+        $this->chartnombre ='Estadisticas';
+        $this->chartLabels =['labels'=>['Ataque', 'Defensa', 'Velocidad']];   
+
+       $estadisticas= [$especie->estadisticas->ataque,$especie->estadisticas->defensa,$especie->estadisticas->velocidad];       
+        $this->chartData= ['data'=>$estadisticas];
         
     }
 
-    public function initializeChart()
-    {
-        $this->chartnombre ='Estadisticas';
-        $this->chartLabels =['labels'=>['Ataque', 'Defensa', 'Velocidad','Vida']];   
-        $this->chartData= ['data'=>[3,3,5,70]];
-    }   
+    
+       
+
+
 
     public function color($idTipo)
     {

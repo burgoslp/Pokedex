@@ -26,7 +26,7 @@ class Pokemon extends Model
     }
 
     public function estadisticas(){
-        return $this->hasOne(Estadistica::class);
+        return $this->hasOne(Estadistica::class,'pokemon_id');
     }
 
     public function habilidades(){

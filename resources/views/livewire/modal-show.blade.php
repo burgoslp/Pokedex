@@ -46,12 +46,11 @@
         </div>
     </div>
     <script>
-        console.log( @this.chartData.data);   
         
         const ctx = document.getElementById('myChart');
-
+        
         new Chart(ctx, {
-                            type: 'radar',
+                            type: 'polarArea',
                             data: {
                             labels:  @this.chartLabels.labels,
                             datasets: [{
