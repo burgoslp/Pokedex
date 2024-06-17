@@ -14,7 +14,7 @@
                             <img src="{{asset('imagenes/'.$especie->imagen.'.png')}}" class=" inline-block" alt="">
                         </div>
                         <div class="w-1/2">
-                            <canvas id="myChart">
+                            <canvas id="estadisticaGrafica">
 
                             </canvas>
                         </div>
@@ -32,42 +32,52 @@
                         </div>
                     </div>
                 </div>
-                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-                        <button type="button"
-                            class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-                            wire:click="cerrarModal">
-                            Cerrar
-                        </button>
-                    </span>
+                <div class="flex justify-end p-2">
+                    <div class="bg-gray-50  mr-3 sm:flex sm:flex-row-reverse">
+                        <span class="flex w-full rounded-md shadow-sm  sm:w-auto">
+                            <a href="{{route('comparar',$especie->id)}}" type="button"
+                                class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+                                Comparar
+                            </a>
+                        </span>
+                    </div>
+                    <div class="bg-gray-50 mr-3 sm:flex sm:flex-row-reverse">
+                        <span class="flex w-full rounded-md shadow-sm  sm:w-auto">
+                            <button type="button"
+                                class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                                wire:click="cerrarModal">
+                                Cerrar
+                            </button>
+                        </span>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
     <script>
-        
-        const ctx = document.getElementById('myChart');
-        
-        new Chart(ctx, {
-                            type: 'polarArea',
-                            data: {
-                            labels:  @this.chartLabels.labels,
-                            datasets: [{
-                                label: @this.chartnombre,
-                                data: @this.chartData.data,
-                                borderWidth: 1
-                            }]
-                            },
-                            options: {
-                                elements: {
-                                            line: {
-                                                borderWidth: 3
+        const ctx = document.getElementById('estadisticaGrafica');
+            
+            new Chart(ctx, {
+                                type: 'polarArea',
+                                data: {
+                                labels:  @this.chartLabels.labels,
+                                datasets: [{
+                                    label: @this.chartnombre,
+                                    data: @this.chartData.data,
+                                    borderWidth: 1
+                                }]
+                                },
+                                options: {
+                                    elements: {
+                                                line: {
+                                                    borderWidth: 3
+                                                }
                                             }
-                                        }
-                            }
-                        });
-           
+                                }
+                            });
+            
     </script>
     @endif
+
 </div>

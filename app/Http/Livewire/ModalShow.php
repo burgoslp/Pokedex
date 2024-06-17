@@ -22,7 +22,6 @@ class ModalShow extends Component
         $this->estadoModal = true;
 
         $this->detalles($data);
-         $this->emit('openModal');
     }
 
     public function cerrarModal()
@@ -47,11 +46,6 @@ class ModalShow extends Component
         $this->chartData= ['data'=>$estadisticas];
         
     }
-
-    
-       
-
-
 
     public function color($idTipo)
     {

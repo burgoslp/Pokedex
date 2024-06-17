@@ -18,10 +18,10 @@ use App\Models\Pokemon;
 */
 
 Route::get('/', [HomeController::class,'index']);
-Route::get('/test', function (){
+Route::get('/comparar/{id}', function ($id){
 
-   
-});
+   return view('comparar');
+})->name('comparar');
 
 
 
