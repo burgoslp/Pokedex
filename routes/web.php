@@ -17,7 +17,11 @@ use App\Models\Pokemon;
 |
 */
 
-Route::get('/home', [HomeController::class,'index']);
+Route::get('/', [HomeController::class,'index']);
+Route::get('/test', function (){
+
+   
+});
 
 
 

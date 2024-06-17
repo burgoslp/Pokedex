@@ -39,4 +39,10 @@
     <div>
         {{$pokemons->links()}}
     </div>
+
+    @push('scripts')
+        <script>
+            console.log('hola mundo')
+        </script>
+    @endpush
 </div>
