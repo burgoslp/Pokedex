@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\EvolucionesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PokemonsController;
 use App\Models\Evolucion;
 use App\Models\Pokemon;
 
@@ -17,11 +19,10 @@ use App\Models\Pokemon;
 |
 */
 
-Route::get('/', [HomeController::class,'index']);
-Route::get('/comparar/{id}', function ($id){
+Route::get('/', [HomeController::class,'index'])->name('buscador');
+Route::get('/pokemon/comparar/{id}', [PokemonsController::class,'comparar'])->name('pokemon.comparar');
+Route::get('/evolucion/comparar/{id}', [EvolucionesController::class,'comparar'])->name('evolucion.comparar');
 
-   return view('comparar');
-})->name('comparar');
 
 
 

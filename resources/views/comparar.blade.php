@@ -4,17 +4,27 @@ Pokedex - Compara tu pokemon favorito con otros
 @endsection
 @section('contenido')
    <main class="grid grid-cols-2">
-      <div class="grid grid-cols-1 gap-2 p-4">
+      <div class="grid grid-rows-2  items-start p-4">
          <div class="grid grid-cols-3 p-5 bg-white  rounded-lg">
-            <div class="">
-               <img src="{{asset('imagenes/beedrill.png')}}" alt="">
+            <div>
+               <img src="{{asset('imagenes/'.$especimen->imagen.'.png')}}" alt="">
             </div>
             <div class="col-span-2">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, culpa? Tenetur vero adipisci sunt
-               nesciunt excepturi doloribus dignissimos sed distinctio, magni nostrum aliquam velit unde voluptatibus
-               officia rem commodi natus?
+               <h1 class="text-2xl">
+                  {{$especimen->nombre}}
+               </h1>
+               <p>
+                  {{$especimen->descripcion}}
+               </p>
+               @foreach ($especimen->tipos as $tipo)
+                  <span class="p-1 mr-2 bg-black  rounded-xl text-white">
+                     {{$tipo->nombre}} 
+                  </span>
+               @endforeach
             </div>
          </div>
+
+
          <div class="grid grid-cols-3 p-5 bg-white rounded-lg">
             <div class="">
                <img src="{{asset('imagenes/beedrill.png')}}" alt="">
@@ -27,7 +37,7 @@ Pokedex - Compara tu pokemon favorito con otros
          </div>
       </div>
       <div class="p-4 ">
-         <canvas id="comparatoria" class="bg-white rounded-lg">
+         <canvas id="graficaComp" class="bg-white rounded-lg">
             
          </canvas>
       </div>
@@ -36,7 +46,7 @@ Pokedex - Compara tu pokemon favorito con otros
 
 @push('scripts')
    <script>
-         const ctx = document.getElementById('comparatoria');
+         const ctx = document.getElementById('graficaComp');
          
          new Chart(ctx, {
          type: 'radar',
