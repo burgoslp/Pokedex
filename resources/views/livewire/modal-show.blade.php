@@ -20,18 +20,24 @@
                         </div>
                     </div>
                     <div class="mb-4 text-center sm:text-left">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                        <h3 class="text-2xl leading-6 font-medium text-gray-900" id="modal-headline">
                             {{$especie->nombre}}
-                        </h3>
-                        <div class="mt-2">
-                            <p class="text-sm text-gray-500 mb-2">
-                                {{$especie->descripcion}}                                
-                            </p>
+
                             @foreach ($especie->tipos as $tipo)
-                            <span class="p-1 mr-2 {{$this->color($tipo->id)}} rounded-xl text-white">
+                            <span class="text-xs p-1 mr-2 {{$this->color($tipo->id)}} rounded-xl text-white">
                                 {{$tipo->nombre}}
                             </span>
                             @endforeach
+                        </h3>
+                        <div class="mt-2">
+                            <p class="text-sm leading-6 text-gray-500 mb-2 ">
+                                {{$especie->descripcion}} <span class="underline decoration-solid ">No es recomendable usar contra pokemons de tipo </span>
+                                
+                                @foreach ($especie->debilidades as $debilidad)
+                                    <span class="p-1 {{$this->color($debilidad->id)}} rounded-xl text-white">{{$debilidad->nombre}}</span>
+                                @endforeach                             
+                            </p>                                
+                           
                         </div>
                     </div>
                     <div class="overflow-auto mb-4">
@@ -65,15 +71,7 @@
                                 </tbody>
                             </table>
                         </div>
-                    </div>
-                    <div>
-                        <p class="text-sm leading-6 text-gray-500 mb-2">
-                            No es recomendable usar contra pokemons de tipo 
-                            @foreach ($especie->debilidades as $debilidad)
-                                <span class="p-1 {{$this->color($debilidad->id)}} rounded-xl text-white">{{$debilidad->nombre}}</span>
-                            @endforeach
-                        </p>
-                    </div>
+                    </div>                    
                 </div>
                 <div class="flex justify-end p-2">
                     <div class="bg-gray-50  mr-3 sm:flex sm:flex-row-reverse">
