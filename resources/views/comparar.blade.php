@@ -3,44 +3,34 @@
 Pokedex - Compara tu pokemon favorito con otros
 @endsection
 @section('contenido')
-   <main class="grid grid-cols-2">
-      <div class="grid grid-rows-2  items-start p-4">
-         <div class="grid grid-cols-3 p-5 bg-white  rounded-lg">
-            <div>
-               <img src="{{asset('imagenes/'.$especimen->imagen.'.png')}}" alt="">
-            </div>
-            <div class="col-span-2">
-               <h1 class="text-2xl">
-                  {{$especimen->nombre}}
-               </h1>
-               <p>
-                  {{$especimen->descripcion}}
-               </p>
-               @foreach ($especimen->tipos as $tipo)
-                  <span class="p-1 mr-2 bg-black  rounded-xl text-white">
-                     {{$tipo->nombre}} 
-                  </span>
-               @endforeach
-            </div>
-         </div>
+   <main class="grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
+            <div class="grid grid-cols-1 p-5 bg-white  rounded-lg">
+               <div class="mx-auto">
+                  <img src="{{asset('imagenes/'.$especimen->imagen.'.png')}}" alt=""  class="h-48">
+               </div>
+               <div >
+                  <h3 class="text-2xl leading-6 font-medium text-gray-900 mb-4" id="modal-headline">
+                     {{$especimen->nombre}}
 
+                     @foreach ($especimen->tipos as $tipo)
+                     <span class="text-xs p-1 mr-2 bg-black rounded-xl text-white">
+                         {{$tipo->nombre}}
+                     </span>
+                     @endforeach
+                 </h3>
+                 <p class="text-sm leading-6 text-gray-500 mb-2 ">
+                  {{$especimen->descripcion}} <span class="underline decoration-solid ">No es recomendable usar contra pokemons de tipo </span>
+                        
+                        @foreach ($especimen->debilidades as $debilidad)
+                           <span class="p-1 bg-black rounded-xl text-white">{{$debilidad->nombre}}</span>
+                        @endforeach                             
+                  </p>                       
+               </div>               
+            </div>
 
-         <div class="grid grid-cols-3 p-5 bg-white rounded-lg">
-            <div class="">
-               <img src="{{asset('imagenes/beedrill.png')}}" alt="">
-            </div>
-            <div class="col-span-2">
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, culpa? Tenetur vero adipisci sunt
-               nesciunt excepturi doloribus dignissimos sed distinctio, magni nostrum aliquam velit unde voluptatibus
-               officia rem commodi natus?
-            </div>
-         </div>
-      </div>
-      <div class="p-4 ">
-         <canvas id="graficaComp" class="bg-white rounded-lg">
-            
-         </canvas>
-      </div>
+          
+
+         @livewire('pokemon-show')  
    </main>
 @endsection
 

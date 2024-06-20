@@ -14,7 +14,9 @@
             Pokedex
         </div>
         <div class="flex justify-end items-center">
-            <img src="{{asset('imagenes/pokeball.png')}}" alt="" class="w-16">
+            <a href="{{route('buscador')}}">
+                <img src="{{asset('imagenes/pokeball.png')}}" alt="" class="w-16">
+            </a>
         </div>
     </nav>
 
