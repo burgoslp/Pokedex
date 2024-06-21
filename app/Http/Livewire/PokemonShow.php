@@ -11,16 +11,14 @@ class PokemonShow extends Component
 
     public $codigo="";
     public $lstData;
-    public $especimen;
+    public $pokemon="";
 
-    public function mount(){
-        $this->lstData();
-    }
+    
 
     public function lstData(){
         
-        $pokemon=Pokemon::select('nombre','codigo');
-        $evoluciones=Evolucion::select('nombre','codigo');
+        $pokemon=Pokemon::select('id','nombre','codigo','altura','peso','imagen','descripcion');
+        $evoluciones=Evolucion::select('id','nombre','codigo','altura','peso','imagen','descripcion');
 
         if(!empty($this->codigo)){
             $pokemon->where('codigo','like','%'.$this->codigo.'%');
@@ -29,11 +27,24 @@ class PokemonShow extends Component
         }
 
           
-        $this->lstData= $evoluciones->union($pokemon)->orderBy('codigo', 'asc')->limit(4)->get();
+        $resultados= $evoluciones->union($pokemon)->orderBy('codigo', 'asc')->limit(4)->get();
+        $this->lstData=$resultados;
     }
 
+    public function buscar(){
+        $pokemons= Pokemon::where('codigo',$this->codigo)->get();
+
+        foreach($pokemons as $pokemon){
+            $this->pokemon=$pokemon;
+        }
+
+       
+       
+    }
+
+    
     public function render()
     {
-        return view('livewire.pokemon-show',);
+        return view('livewire.pokemon-show');
     }
 }

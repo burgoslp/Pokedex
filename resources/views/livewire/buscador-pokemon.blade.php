@@ -23,7 +23,7 @@
         </form>
     </div>
 
-    <div class="grid sm:grid-cols-1  md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:grid-cols-2   lg:gap-8 mb-4">
+    <div class="grid sm:grid-cols-1 gap-4  md:grid-cols-2  lg:grid-cols-3 lg:grid-cols-2 lg:gap-8 mb-4">
         @foreach ($pokemons as $pokemon)
         <div>
             <div class=" shadow-xl rounded-lg bg-white  flex flex-col ">
