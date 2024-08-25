@@ -18,7 +18,6 @@
                 <option value="{{$tipo->id}}">{{$tipo->nombre}}</option>
                 @endforeach
             </select>
-
         </div>
         </form>
     </div>

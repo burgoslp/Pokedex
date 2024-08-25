@@ -6,7 +6,7 @@ use App\Models\Pokemon;
 use Livewire\Component;
 use App\Models\Evolucion;
 
-class PokemonShow extends Component
+class Show extends Component
 {
 
     public $codigo="";
@@ -45,6 +45,6 @@ class PokemonShow extends Component
     
     public function render()
     {
-        return view('livewire.pokemon-show');
+        return view('livewire.show');
     }
 }

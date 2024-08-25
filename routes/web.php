@@ -20,8 +20,8 @@ use App\Models\Pokemon;
 */
 
 Route::get('/', [HomeController::class,'index'])->name('buscador');
-Route::get('/pokemon/comparar/{id}', [PokemonsController::class,'comparar'])->name('pokemon.comparar');
-Route::get('/evolucion/comparar/{id}', [EvolucionesController::class,'comparar'])->name('evolucion.comparar');
+Route::get('/pokemon/show/{id}', [PokemonsController::class,'show'])->name('pokemon.show');
+Route::get('/evolucion/show/{id}', [EvolucionesController::class,'show'])->name('evolucion.show');
 
 
 

@@ -8,7 +8,7 @@ use App\Models\Tipo;
 use Livewire\WithPagination;
 use Livewire\Component;
 
-class BuscadorPokemon extends Component
+class Buscador extends Component
 {
     use WithPagination;
 
@@ -57,6 +57,6 @@ class BuscadorPokemon extends Component
 
     public function render()
     {
-        return view('livewire.buscador-pokemon',['pokemons'=>$this->buscar(),'tipos'=>$this->tiposAll()]);
+        return view('livewire.buscador',['pokemons'=>$this->buscar(),'tipos'=>$this->tiposAll()]);
     }
 }

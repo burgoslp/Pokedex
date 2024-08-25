@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class PokemonsController extends Controller
 {
-    public function comparar($id){
+    public function show($id){
 
-        $especimen=Pokemon::find($id);
-        return view('comparar',compact('especimen'));
+        $pokemon=Pokemon::find($id);
+        return view('show',compact('pokemon'));
     }
 }

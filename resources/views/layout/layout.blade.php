@@ -30,9 +30,7 @@
     
     @yield('modales')   
     @livewireScripts   
-    <script src="{{ asset('js/chart.js') }}"></script>
-    @stack('scripts')
-    
+    @stack('scripts')    
 </body>
 
 </html>

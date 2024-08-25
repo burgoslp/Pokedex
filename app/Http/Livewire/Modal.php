@@ -6,7 +6,7 @@ use App\Models\Pokemon;
 use App\Models\Evolucion;
 use Livewire\Component;
 
-class ModalShow extends Component
+class Modal extends Component
 {
     protected $listeners = ['abrirModal' => 'abrirModal'];
     public $estadoModal = false;
@@ -20,8 +20,8 @@ class ModalShow extends Component
     public function abrirModal($data)
     {
         $this->estadoModal = true;
-
         $this->detalles($data);
+        $this->emit('modalAbierto');
     }
 
     public function cerrarModal()
@@ -127,6 +127,6 @@ class ModalShow extends Component
     }
     public function render()
     {
-        return view('livewire.modal-show');
+        return view('livewire.modal');
     }
 }

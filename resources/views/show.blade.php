@@ -6,22 +6,22 @@ Pokedex - Compara tu pokemon favorito con otros
    <main class="grid grid-cols-1 md:grid-cols-2 p-4 gap-4">
             <div class="grid grid-cols-1 p-5 bg-white  rounded-lg">
                <div class="mx-auto">
-                  <img src="{{asset('imagenes/'.$especimen->imagen.'.png')}}" alt=""  class="h-48">
+                  <img src="{{asset('imagenes/'.$pokemon->imagen.'.png')}}" alt=""  class="h-48">
                </div>
                <div >
                   <h3 class="text-2xl leading-6 font-medium text-gray-900 mb-4" id="modal-headline">
-                     {{$especimen->nombre}}
+                     {{$pokemon->nombre}}
 
-                     @foreach ($especimen->tipos as $tipo)
+                     @foreach ($pokemon->tipos as $tipo)
                      <span class="text-xs p-1 mr-2 bg-black rounded-xl text-white">
                          {{$tipo->nombre}}
                      </span>
                      @endforeach
                  </h3>
                  <p class="text-sm leading-6 text-gray-500 mb-2 ">
-                  {{$especimen->descripcion}} <span class="underline decoration-solid ">No es recomendable usar contra pokemons de tipo </span>
+                  {{$pokemon->descripcion}} <span class="underline decoration-solid ">No es recomendable usar contra pokemons de tipo </span>
                         
-                        @foreach ($especimen->debilidades as $debilidad)
+                        @foreach ($pokemon->debilidades as $debilidad)
                            <span class="p-1 bg-black rounded-xl text-white">{{$debilidad->nombre}}</span>
                         @endforeach                             
                   </p>                       
@@ -30,7 +30,7 @@ Pokedex - Compara tu pokemon favorito con otros
 
           
 
-         @livewire('pokemon-show')  
+         @livewire('show')  
    </main>
 @endsection
 

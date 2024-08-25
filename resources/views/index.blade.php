@@ -5,13 +5,13 @@ Pokedex - encuentra tu pokemon
 @section('contenido')
     <main class="grid grid-cols-1 mb-8">
         <section class="p-3 col-span-2">
-            @livewire('buscador-pokemon')
+            @livewire('buscador')
         </section>
     </main>
 @endsection
 
 @section('modales')
-    @livewire('modal-show')
+    @livewire('modal')
 @endsection
 
 
